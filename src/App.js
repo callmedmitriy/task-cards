@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+
+import Cards from './components/Cards'
+import InfoCard from './models/InfoCard'
 
 function App() {
+  const [cardsList, setCardsList] = useState([
+    new InfoCard(1,'Title one','description one','https://www.thelitigationgroup.com/wp-content/uploads/2016/10/image-x.png'),
+    new InfoCard(2,'Title two','description two','https://www.thelitigationgroup.com/wp-content/uploads/2016/10/image-x.png'),
+    new InfoCard(3,'Title three','description three','https://www.thelitigationgroup.com/wp-content/uploads/2016/10/image-x.png'),
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Cards data={cardsList}/>
   );
 }
 
